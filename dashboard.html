@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+          <li><a href="/">Dashboard</a></li>
+          <li><a href="/module-results">Module Results</a></li>
+          <li><a href="/analytics">Analytics</a></li>
+          <li><a href="/history">Historical Records</a></li>
+          <li><a href="/settings">Settings</a></li>
+        </ul>
+      </aside>
+      <main>
+        <header>
+          <h1>Dashboard</h1>
+        </header>
+        <section class="cards">
+          <div class="card">Total Students: 120</div>
+          <div class="card">Modules: 15</div>
+          <div class="card">Notifications: 5</div>
+          <canvas id="chart"></canvas>
+        </section>
+      </main>
+    </div>
+    <script>
+      // Example Chart.js code
+      const ctx = document.getElementById("chart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Module 1", "Module 2", "Module 3"],
+          datasets: [
+            {
+              label: "Pass Rate",
+              data: [85, 90, 78],
+              backgroundColor: ["blue", "green", "orange"],
+            },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>
